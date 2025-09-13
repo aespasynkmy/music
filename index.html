@@ -46,14 +46,14 @@
         }
 
         nav ul li a img {
-            width: 20px; /* Adjust the image size */
+            width: 30px; /* Adjusted image size */
             height: auto;
             margin-right: 10px; /* Space between the image and text */
         }
 
         /* Logo styling */
         .logo {
-            width: 100px;  /* Ensure the logo has a fixed width */
+            width: 150px;  /* Enlarged logo */
             height: auto;
             margin-right: 15px;
         }
@@ -67,8 +67,8 @@
 
         .section {
             background: rgba(0, 0, 0, 0.7) url('https://github.com/aespasynkmy/home/blob/main/bg2.jpg?raw=true') no-repeat center center; /* Set background image */
-            background-size: contain; /* Ensure the image keeps its original aspect ratio */
-            background-attachment: fixed; /* Keep the background fixed during scrolling */
+            background-size: cover; /* Ensure the image covers the section */
+            background-attachment: local; /* Ensure background is locally fixed */
             margin: 30px 0;
             padding: 30px;
             border-radius: 12px;
@@ -76,16 +76,18 @@
             text-align: center; /* This ensures content is centered */
         }
 
+        /* Ensure the heading text color and size */
         .section h2 {
-            color: #be185d;
-            font-size: 1.5em;
+            color: #be185d; /* Red for the heading */
+            font-size: 1.5em; /* Heading font size */
             margin-bottom: 15px;
         }
 
+        /* Ensure the paragraph text color and size */
         .section p {
-            font-size: 1.1em;
+            font-size: 1.1em; /* Paragraph font size */
             margin-bottom: 20px;
-            color: #fff;
+            color: #fff; /* White for paragraph text */
         }
 
         .link-button {
@@ -131,20 +133,16 @@
             }
 
             .logo {
-                width: 80px; /* Slightly reduce the logo size on smaller screens */
+                width: 120px; /* Slightly reduce the logo size on smaller screens */
             }
 
-            .about h1 {
+            .section h2 {
                 font-size: 2.5em;
             }
 
-            .about p {
+            .section p {
                 font-size: 1.1em;
                 padding: 0 15px;
-            }
-
-            .footer-img {
-                max-height: 60vh;
             }
         }
     </style>
@@ -156,15 +154,15 @@
             <nav>
                 <ul>
                     <li><a href="https://aespasynkmy.github.io/home/" target="_blank"><img src="https://github.com/aespasynkmy/home/blob/main/synklogo.png?raw=true" alt="Logo" class="logo"></a></li>
-                    <li><a href="https://weibo.com/5795013414/5181761783073918" target="_blank"><img src="https://github.com/aespasynkmy/mytimeaespa/blob/main/karina.png?raw=true" alt="Karina">简介</a></li>
-                    <li><a href="https://www.baidu.com/" target="_blank"><img src="https://github.com/aespasynkmy/mytimeaespa/blob/main/giselle.png?raw=true" alt="Giselle">来路</a></li>
-                    <li><a href="https://www.baidu.com/" target="_blank"><img src="https://github.com/aespasynkmy/mytimeaespa/blob/main/winter.png?raw=true" alt="Winter">舞台</a></li>
-                    <li><a href="https://www.baidu.com/" target="_blank"><img src="https://github.com/aespasynkmy/mytimeaespa/blob/main/ning.png?raw=true" alt="Ning">综艺</a></li>
+                    <li><a href="https://weibo.com/5795013414/5181761783073918" target="_blank"><img src="https://github.com/aespasynkmy/home/blob/main/1.png?raw=true" alt="Karina">简介</a></li>
+                    <li><a href="https://www.baidu.com/" target="_blank"><img src="https://github.com/aespasynkmy/home/blob/main/2.png?raw=true" alt="Giselle">来路</a></li>
+                    <li><a href="https://www.baidu.com/" target="_blank"><img src="https://github.com/aespasynkmy/home/blob/main/3.png?raw=true" alt="Winter">舞台</a></li>
+                    <li><a href="https://www.baidu.com/" target="_blank"><img src="https://github.com/aespasynkmy/home/blob/main/4.png?raw=true" alt="Ning">综艺</a></li>
                 </ul>
             </nav>
         </header>
 
-        <main>
+                <main>
             <!-- 板块 1 -->
             <div class="section">
                 <h2>单曲合集</h2>
@@ -241,11 +239,22 @@
         <!-- Anniversary text at bottom -->
         <footer class="anniversary">
             <a href="https://weibo.com/u/5795013414" target="_blank" style="color: white; text-decoration: none;">
-                aespa_synkMY<br>HAPPY 5TH ANNIVERSARY
+                HAPPY 5TH ANNIVERSARY<br>aespa_synkMY
             </a>
         </footer>
     </div>
 
+    <script>
+        // Check if the device is iOS and modify background attachment
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        if (isIOS) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.style.backgroundAttachment = 'local'; // For iOS devices
+            });
+        }
+    </script>
 </body>
 </html>
+
 
